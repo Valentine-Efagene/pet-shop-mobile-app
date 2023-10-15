@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <View style={styles.container}>
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-        <Nav style={styles.nav} />
+        <Nav />
         <View style={styles.details}>
           <Text style={styles.headline}>Welcome to our Pet Shop!</Text>
           <Text style={styles.subHeadline}>
@@ -88,5 +88,4 @@ const styles = StyleSheet.create({
   cta2Text: {
     fontFamily: Font.nunitoRegular400,
   },
-  nav: {},
 });

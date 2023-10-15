@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import Hero from "./components/Hero";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { useFonts } from "expo-font";
@@ -8,6 +8,9 @@ import * as SplashScreen from "expo-splash-screen";
 import Color from "./colors";
 import Companion from "./components/Companion";
 import Discovery from "./components/Discovery";
+import Family from "./components/Family";
+import Links from "./components/Links";
+import Testimonials from "./components/Testimonials";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -29,15 +32,23 @@ export default function App() {
     return null;
   }
 
+  // Alternate the positions of the safeareaview and the scrollview
+  // to see notched views
+
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
-        <StatusBar style="auto" />
-        <View style={styles.content}>
-          <Hero />
-          <Companion />
-          <Discovery />
-        </View>
+        <ScrollView>
+          <StatusBar style="auto" />
+          <View style={styles.content}>
+            <Hero />
+            <Companion />
+            <Discovery />
+            <Family />
+            <Links />
+            <Testimonials />
+          </View>
+        </ScrollView>
       </SafeAreaView>
     </SafeAreaProvider>
   );

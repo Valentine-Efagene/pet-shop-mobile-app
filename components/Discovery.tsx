@@ -44,13 +44,12 @@ export default function Discovery() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: Constant.padding,
+    padding: Constant.padding as number,
   },
   image: {
     flex: 1,
     width: "100%",
     aspectRatio: 380 / 475,
-    backgroundColor: "#0553",
     borderRadius: 40,
   },
   heading: {

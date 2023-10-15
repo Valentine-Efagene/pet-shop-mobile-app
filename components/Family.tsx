@@ -4,18 +4,18 @@ import Font from "../fonts";
 import Color from "../colors";
 import Constant from "../constants";
 
-const image = require("../assets/img/companion.png");
+const image = require("../assets/img/family.png");
 const blurhash =
   "|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[";
 
-export default function Companion() {
+export default function Family() {
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>Find Your Perfect Pet Companion Today</Text>
+      <Text style={styles.heading}>Find the Pur-fect Pet for Your Family</Text>
       <Text style={styles.paragraph}>
-        At our pet shop, we offer a wide variety of pets, from playful puppies
-        to cuddly kittens. Whether you’re looking for a loyal companion or a
-        furry friend to brighten your day, we have the perfect pet for you.{" "}
+        At our pet shop, we offer a wide selection of healthy and happy pets.
+        Our knowledgeable staffs are here to help find the perfect companion for
+        your family. We have the pet tha t will bring joy to your home.
       </Text>
       <Image
         style={styles.image}
@@ -24,13 +24,27 @@ export default function Companion() {
         contentFit="cover"
         transition={1000}
       />
+      <Text style={styles.heading}>Find the Perfect Pet Today!</Text>
+      <Text
+        style={{
+          ...styles.paragraph,
+          fontSize: 10,
+          textAlign: "center",
+          width: 244,
+          alignSelf: "center",
+        }}
+      >
+        At our pet shop, we make the process of purchasing a pet or product easy
+        and enjoyable. With a wide selection of pets and high-quality products,
+        you will find everything you need to care for your furry friends.
+      </Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    padding: Constant.padding as number,
+    padding: Constant.padding,
   },
   image: {
     flex: 1,
@@ -38,13 +52,14 @@ const styles = StyleSheet.create({
     aspectRatio: 380 / 475,
     backgroundColor: "#0553",
     borderRadius: 40,
+    marginBottom: 12,
   },
   heading: {
     fontFamily: Font.nunitoBold700,
     fontSize: 24,
     color: Color.textDark,
     alignItems: "flex-start",
-    marginBottom: 12,
+    marginBottom: 8,
   },
   paragraph: {
     fontFamily: Font.nunitoRegular400,
