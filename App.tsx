@@ -1,10 +1,13 @@
 import { useCallback } from "react";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Hero from "./components/Hero";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
+import Color from "./colors";
+import Companion from "./components/Companion";
+import Discovery from "./components/Discovery";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -30,7 +33,11 @@ export default function App() {
     <SafeAreaProvider>
       <SafeAreaView style={styles.container} onLayout={onLayoutRootView}>
         <StatusBar style="auto" />
-        <Hero />
+        <View style={styles.content}>
+          <Hero />
+          <Companion />
+          <Discovery />
+        </View>
       </SafeAreaView>
     </SafeAreaProvider>
   );
@@ -40,5 +47,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#ffff",
+  },
+  content: {
+    flex: 1,
+    backgroundColor: Color.bgLight,
+    borderTopEndRadius: 40,
+    borderTopStartRadius: 40,
+    borderWidth: 8,
+    borderColor: "#fff",
+    overflow: "hidden",
   },
 });
